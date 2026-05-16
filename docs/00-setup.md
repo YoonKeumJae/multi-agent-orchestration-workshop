@@ -110,10 +110,11 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
 1. Install the following tools on your machine.
 
    - [VS Code](https://code.visualstudio.com/download) + [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+   - Latest LTS version of [node.js](https://nodejs.org/) through `nvm` ([Windows](https://github.com/coreybutler/nvm-windows) or [MacOS/Linux](https://github.com/nvm-sh/nvm))
    - [Docker Desktop](https://docs.docker.com/desktop/) or equivalent
    - [GitHub CLI](https://cli.github.com)
    - [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
-   - [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+   - [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) and Bicep CLI
    - [Aspire CLI](https://aspire.dev/get-started/install-cli/)
 
    Then, run the following commands to verify they are properly installed.
@@ -121,6 +122,10 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     ```bash
     # .NET SDK
     dotnet --list-sdks
+
+    # node.js
+    node --version
+    npm --version
 
     # Docker
     docker info
@@ -133,6 +138,7 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
 
     # az CLI
     az --version
+    az bicep install
     az bicep version
 
     # Aspire CLI
