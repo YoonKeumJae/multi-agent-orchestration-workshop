@@ -31,8 +31,8 @@ foreach (var agentName in agentNames!)
     builder.Services.AddKeyedSingleton<AIAgent>(agentName, agent);
 }
 
-var concurrentAgentNames = agentNames!.Where(name => name != "aggregator-agent");
-var aggregatorAgentName = agentNames!.SingleOrDefault(name => name == "aggregator-agent");
+var concurrentAgentNames = agentNames!.Where(name => name != "student-report-agent");
+var aggregatorAgentName = agentNames!.SingleOrDefault(name => name == "student-report-agent");
 
 builder.AddWorkflow("concurrent-analysis", (sp, key) => AgentWorkflowBuilder.BuildConcurrent(
     workflowName: key,

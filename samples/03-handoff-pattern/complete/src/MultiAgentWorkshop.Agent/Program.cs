@@ -42,19 +42,19 @@ foreach (var agentName in agentNames!)
 builder.AddWorkflow("publisher", (sp, key) =>
 {
     var triage = sp.GetRequiredKeyedService<AIAgent>("triage-agent");
-    var generalSupport = sp.GetRequiredKeyedService<AIAgent>("general-support-agent");
-    var networkSpecialist = sp.GetRequiredKeyedService<AIAgent>("network-specialist-agent");
-    var warranty = sp.GetRequiredKeyedService<AIAgent>("warranty-agent");
+    var academicSupport = sp.GetRequiredKeyedService<AIAgent>("academic-support-agent");
+    var fieldTrainingSafety = sp.GetRequiredKeyedService<AIAgent>("field-training-safety-agent");
+    var careerPathway = sp.GetRequiredKeyedService<AIAgent>("career-pathway-agent");
 
-    var specialists = new[] { generalSupport, networkSpecialist, warranty };
+    var specialists = new[] { academicSupport, fieldTrainingSafety, careerPathway };
 
     var workflow = AgentWorkflowBuilder.CreateHandoffBuilderWith(triage)
         // Triage can hand off to any specialist
         .WithHandoffs(triage, specialists)
         // Each specialist can hand off to other specialists
-        .WithHandoffs(generalSupport, [networkSpecialist, warranty])
-        .WithHandoffs(networkSpecialist, [generalSupport, warranty])
-        .WithHandoffs(warranty, [generalSupport, networkSpecialist])
+        .WithHandoffs(academicSupport, [fieldTrainingSafety, careerPathway])
+        .WithHandoffs(fieldTrainingSafety, [academicSupport, careerPathway])
+        .WithHandoffs(careerPathway, [academicSupport, fieldTrainingSafety])
         // All specialists hand back to triage
         .WithHandoffs(specialists, triage, "Hand back to triage when the issue is resolved or needs further routing")
         .Build();
