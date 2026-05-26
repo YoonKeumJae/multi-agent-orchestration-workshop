@@ -139,6 +139,15 @@ Se você já tem uma instância do GitHub Codespaces, pule esta seção e vá di
     aspire --version
     ```
 
+   > **NOTA**: Você pode executar os seguintes comandos para manter `azd`, `az` e `aspire` atualizados.
+   >
+   > ```bash
+   > azd update
+   > az upgrade --allow-preview true
+   > az bicep upgrade
+   > aspire update --self
+   > ```
+
 ### Fazer login no GitHub
 
 1. Faça login no GitHub.

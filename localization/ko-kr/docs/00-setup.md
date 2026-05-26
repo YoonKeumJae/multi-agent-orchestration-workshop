@@ -139,6 +139,15 @@
     aspire --version
     ```
 
+   > **NOTE**: `azd`, `az`, `aspire`를 최신 상태로 유지하려면 다음 명령어를 실행하세요.
+   >
+   > ```bash
+   > azd update
+   > az upgrade --allow-preview true
+   > az bicep upgrade
+   > aspire update --self
+   > ```
+
 ### GitHub에 로그인하기
 
 1. GitHub에 로그인합니다.

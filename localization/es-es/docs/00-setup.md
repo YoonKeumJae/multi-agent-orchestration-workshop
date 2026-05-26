@@ -139,6 +139,15 @@ Si ya tiene una instancia de GitHub Codespaces, omita esta sección y vaya direc
     aspire --version
     ```
 
+   > **NOTA**: Es posible que desee ejecutar los siguientes comandos para mantener `azd`, `az` y `aspire` actualizados.
+   >
+   > ```bash
+   > azd update
+   > az upgrade --allow-preview true
+   > az bicep upgrade
+   > aspire update --self
+   > ```
+
 ### Iniciar sesión en GitHub
 
 1. Inicie sesión en GitHub.

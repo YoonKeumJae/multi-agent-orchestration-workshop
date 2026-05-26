@@ -139,6 +139,15 @@
     aspire --version
     ```
 
+   > **注意**：你可以运行以下命令将 `azd`、`az` 和 `aspire` 更新到最新版本。
+   >
+   > ```bash
+   > azd update
+   > az upgrade --allow-preview true
+   > az bicep upgrade
+   > aspire update --self
+   > ```
+
 ### 登录 GitHub
 
 1. 登录 GitHub。

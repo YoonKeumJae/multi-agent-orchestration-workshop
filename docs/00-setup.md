@@ -145,6 +145,15 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     aspire --version
     ```
 
+   > **NOTE**: You may want to run the following commands to get your `azd`, `az` and `aspire` up-to-date.
+   >
+   > ```bash
+   > azd update
+   > az upgrade --allow-preview true
+   > az bicep upgrade
+   > aspire update --self
+   > ```
+
 ### Log in to GitHub
 
 1. Log in to GitHub.
